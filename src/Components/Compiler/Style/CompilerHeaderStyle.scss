@@ -1,0 +1,185 @@
+@import "./Common.scss";
+
+.oprations {
+  // @extend %spaceBetweenAlignWithFlexRow;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 10px;
+  margin: 10px 0px;
+  border-bottom: 8px solid;
+
+  @media (max-width: 800px) {
+    @include box(auto, 100vw);
+    // flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    z-index: 999;
+    // height: 0;
+  }
+  .run {
+    @extend %spaceArroundAlignWithFlexRow;
+    background: #a31545;
+    height: 40px;
+    min-width: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    line-height: 20px;
+    transition: 0.3s;
+    &:hover {
+      background-color: #830a32;
+    }
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+}
+.mydropdown {
+  position: relative;
+  height: 40px;
+  width: 150px;
+  background: #3845a8;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: 0.5s;
+  margin-left: 10px;
+  cursor: pointer;
+  @media (max-width: 800px) {
+    position: relative;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  // transition-delay: 0.5s;
+
+  .value-label {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 800px) {
+      width: 150px;
+      justify-content: center;
+    }
+  }
+  .dr-option {
+    background: #3845a8;
+    width: 100%;
+    transition: 0.3s;
+    position: absolute;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 9999;
+
+    @media (min-width: 800px) {
+      top: calc(100% - 2px);
+    }
+    @media (max-width: 800px) {
+      bottom: calc(100% - 2px);
+      width: 150px;
+
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      // right: calc(100% - 45px);
+    }
+    .hover-div {
+      position: absolute;
+      top: 0;
+      height: 40px;
+      width: 100%;
+      background: #2c3685;
+      transition: 0.4s;
+      border-radius: 0px;
+      border-left: 5px solid;
+      box-sizing: border-box;
+    }
+    .lang {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      padding-left: 20px;
+      transition: 0.5s;
+      transition: 0.3s;
+      border-top: 1px solid #1f286923;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+.theme-change {
+  background: rgb(24, 24, 24);
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+  transition: 0.2s;
+  box-sizing: border-box;
+  &:hover {
+    opacity: 0.7;
+  }
+  cursor: pointer;
+  @media (max-width: 800px) {
+    height: 50px;
+    width: 50px;
+  }
+}
+.mobile-opration {
+  padding-bottom: 10px;
+  width: 100%;
+  // background-color: yellow;
+  @extend %centerAlignWithFlex;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 999;
+    // height: 0;
+  }
+  .mobile-run {
+    @extend %centerAlignWithFlex;
+    @include box(50px, 50px, #a31545);
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    border-radius: 50%;
+    line-height: 20px;
+    transition: 0.3s;
+    margin-right: 10px;
+    margin-left: 10px;
+    &:hover {
+      background-color: #830a32;
+    }
+  }
+}
+.dismiss-dropdown {
+  // background: red;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}

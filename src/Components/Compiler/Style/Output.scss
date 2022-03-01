@@ -1,0 +1,53 @@
+@import "./Common.scss";
+.output-side {
+  height: 100vh;
+  width: 40%;
+  border-left: 8px solid #f5f5f5;
+  z-index: 99;
+
+  top: 0;
+  @media (max-width: 800px) {
+    border: none;
+    border-top: 8px solid #f5f5f5;
+    height: 50%;
+    width: 100%;
+  }
+  .stdin {
+    @extend %flexColumnAlignStart;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+    color: $seconderyTextColor;
+    .input {
+      background: transparent;
+      border: none;
+      width: 80%;
+      margin-top: 15px;
+      resize: none;
+      font-size: 16px;
+      padding-left: 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .indicator {
+      @include box(3px, 100%, $successColor);
+      margin-bottom: 10px;
+    }
+  }
+  .output-div {
+    @extend %flexColumnAlignStart;
+    padding-left: 10px;
+    // padding-top: 10px;
+    font-weight: bold;
+    color: $seconderyTextColor;
+
+    // width: 100%;
+
+    .output {
+      font-weight: normal;
+      font-size: 15px;
+      z-index: 999;
+    }
+  }
+}

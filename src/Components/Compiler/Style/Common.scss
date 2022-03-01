@@ -1,0 +1,29 @@
+@import "./Colors.scss";
+
+%centerAlignWithFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%spaceBetweenAlignWithFlexRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+%spaceArroundAlignWithFlexRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+%flexColumnAlignStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@mixin box($height: 0, $width: 0, $bgColor: transparent) {
+  height: $height;
+  width: $width;
+  background-color: $bgColor;
+  //   background-color: gray;
+}
