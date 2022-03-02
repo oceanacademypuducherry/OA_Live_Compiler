@@ -1,7 +1,7 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { BsPlayFill } from "react-icons/bs";
 import "./Style/CompilerHeaderStyle.scss";
-import Dropdown from "react-dropdown";
+// import Dropdown from "react-dropdown";
 import { BsFillMoonStarsFill, BsCloudSunFill } from "react-icons/bs";
 import { BiCodeAlt } from "react-icons/bi";
 import "react-dropdown/style.css";
@@ -47,21 +47,21 @@ export default function CompilerHeader() {
       className: "options",
     },
   ];
-  const editorTheme = [
-    { value: "one_dark", label: "Dark" },
-    { value: "github", label: "Light" },
-  ];
+  // const editorTheme = [
+  //   { value: "one_dark", label: "Dark" },
+  //   { value: "github", label: "Light" },
+  // ];
 
-  function languageChange(value) {
-    setLanguage(value);
-  }
-  function themeChange(value) {
-    setTheme(value.value);
-  }
+  // function languageChange(value) {
+  //   setLanguage(value);
+  // }
+  // function themeChange(value) {
+  //   setTheme(value.value);
+  // }
 
   async function compileCode() {
     axios
-      .post("http://192.168.0.40:4000/jd", ourCode)
+      .post("https://peaceful-shelf-59882.herokuapp.com/jd", ourCode)
       .then((res) => {
         let outputData = res.data;
         console.log();
