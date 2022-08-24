@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "complier-713ed"
+    "default": "oceanlivereact",
+    "compiler": "oceanlivereact"
+  },
+  "targets": {
+    "oceanlivereact": {
+      "hosting": {
+        "tool": [
+          "oa-compiller"
+        ]
+      }
+    }
   }
 }

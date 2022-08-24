@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 
 // Componets
-import CompilerHeader from "./CompilerHeader";
+
 import Editor from "./Editor";
 import Output from "./Output";
 
@@ -9,6 +9,10 @@ import { ThemeProvider } from "styled-components";
 import { GlobaleStyle, lightTheme, darkTheme } from "./Style/globalStyle";
 // styles
 import "./Style/CompilerStyle.scss";
+
+const clientId = "2b8c6866ee2b464fd4e024b4dffb625d";
+const clientSecret =
+  "c7617cbfd54094df5f01ab06e17ccbd501afccdd94cd40268842721057ee7664";
 
 export const CompilerContext = createContext(null);
 export default function Compiler() {
@@ -23,9 +27,8 @@ export default function Compiler() {
     language: "",
     stdin: "",
     versionIndex: "0",
-    clientId: "263bef597786386d1facd3730ecd175c",
-    clientSecret:
-      "9ab0414e4600b404389bbd15a7264a37bcf12d32800b102843a8072d9b503019",
+    clientId: clientId,
+    clientSecret: clientSecret,
   });
   function getMode(mode) {
     if (mode === "python") {
@@ -47,9 +50,6 @@ export default function Compiler() {
   }, [language]);
   return (
     <div>
-      {/* <div className="appbar" style={{ height: 50, background: "blue" }}>
-        ocean academy
-      </div> */}
       <CompilerContext.Provider
         value={{
           theme,

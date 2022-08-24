@@ -17,6 +17,7 @@ export default function Output() {
       <CompilerHeader />
       <div className="stdin">
         <span>STDIN</span>
+
         <textarea
           rows={3}
           type="text"

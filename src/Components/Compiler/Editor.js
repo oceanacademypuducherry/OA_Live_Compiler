@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import AceEditor from "react-ace";
 import { CompilerContext } from "./Compiler";
-
-import styled from "styled-components";
-
+import logo from "./oa.svg";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-java";
@@ -17,10 +15,7 @@ import "ace-builds/src-noconflict/theme-tomorrow";
 
 export default function Editor() {
   const { theme, language, setOurCode, ourCode } = useContext(CompilerContext);
-  const [editorStyle, setEditorStyle] = useState({
-    height: "50vh",
-    width: "10vh",
-  });
+
   function onChange(newValue) {
     setOurCode({
       ...ourCode,
@@ -28,10 +23,13 @@ export default function Editor() {
     });
   }
   const mediaMatch = window.matchMedia("(min-width: 800px)");
-  const [matches, setMatches] = useState(mediaMatch.matches);
+  const matches = mediaMatch.matches;
 
   return (
     <div className="editor-div">
+      <div className="logo">
+        {/* <img src={logo} alt="" height={50} width={"auto"} />{" "} */}
+      </div>
       <AceEditor
         mode={`${language.value}`}
         theme={`${theme}`}
@@ -43,7 +41,7 @@ export default function Editor() {
           position: matches ? "fixed" : "absolute",
           width: matches ? "60%" : "100%",
           height: matches ? "100%" : "50%",
-          top: matches ? 0 : 10,
+          top: matches ? 80 : 10,
           // transform: "translate(-50%,-50%)",
         }}
       />

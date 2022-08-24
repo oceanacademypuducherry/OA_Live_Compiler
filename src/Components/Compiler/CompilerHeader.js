@@ -61,10 +61,9 @@ export default function CompilerHeader() {
 
   async function compileCode() {
     axios
-      .post("https://peaceful-shelf-59882.herokuapp.com/jd", ourCode)
+      .post("https://oa-live-api.herokuapp.com/jd", ourCode)
       .then((res) => {
         let outputData = res.data;
-        console.log();
         setMyOptput(outputData.output);
       })
       .catch((error) => console.log("error===", error));
@@ -73,6 +72,14 @@ export default function CompilerHeader() {
   function onClickLang() {
     setClickCourse(!clickCourse);
   }
+
+  // document.querySelector(".run").addEventListener("keydown", (e) => {
+  //   console.log("sdjfkdfksfdfs");
+  //   if (e.ctrlKey && e.code === "Enter") {
+  //     console.log("run");
+  //     compileCode();
+  //   }
+  // });
   return (
     // <div className="compilerHeader">
     //   <div className="filename">HelloWorld.py</div>
