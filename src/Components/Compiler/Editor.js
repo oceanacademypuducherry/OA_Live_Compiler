@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import AceEditor from "react-ace";
 import { CompilerContext } from "./Compiler";
-import logo from "./oa.svg";
+import logo from "./logo.png";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-java";
@@ -12,6 +12,8 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-one_dark";
 import "ace-builds/src-noconflict/theme-tomorrow";
+
+// import "./Style/Editor.scss";
 
 export default function Editor() {
   const { theme, language, setOurCode, ourCode } = useContext(CompilerContext);
@@ -28,7 +30,13 @@ export default function Editor() {
   return (
     <div className="editor-div">
       <div className="logo">
-        {/* <img src={logo} alt="" height={50} width={"auto"} />{" "} */}
+        <img
+          src={logo}
+          alt=""
+          height={50}
+          width={"auto"}
+          style={{ margin: 15 }}
+        />{" "}
       </div>
       <AceEditor
         mode={`${language.value}`}

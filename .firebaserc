@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "oceanlivereact",
-    "compiler": "oceanlivereact"
+    "default": "oceanlivereact"
   },
   "targets": {
     "oceanlivereact": {
@@ -11,5 +10,6 @@
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
