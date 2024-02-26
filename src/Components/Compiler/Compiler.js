@@ -10,9 +10,9 @@ import { GlobaleStyle, lightTheme, darkTheme } from "./Style/globalStyle";
 // styles
 import "./Style/CompilerStyle.scss";
 
-const clientId = "2b8c6866ee2b464fd4e024b4dffb625d";
+const clientId = "3cfd2d12dc136020fc8f9068ed0e2b7b";
 const clientSecret =
-  "c7617cbfd54094df5f01ab06e17ccbd501afccdd94cd40268842721057ee7664";
+  "5b3676bd8816a18c6f7a4fa36faff5841afc7ee5e6ca8d7aa0d262c09dac0442";
 
 export const CompilerContext = createContext(null);
 export default function Compiler() {

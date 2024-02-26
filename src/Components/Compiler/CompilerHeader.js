@@ -61,7 +61,10 @@ export default function CompilerHeader() {
 
   async function compileCode() {
     axios
-      .post("https://oa-live-api.herokuapp.com/jd", ourCode)
+      .post(
+        "https://us-central1-oceanlivereact.cloudfunctions.net/app/jd",
+        ourCode
+      )
       .then((res) => {
         let outputData = res.data;
         setMyOptput(outputData.output);
